@@ -2,11 +2,11 @@ data "aws_iam_policy_document" "lambda" {
   statement {
     effect = "Allow"
 
-  actions = [
-    "dynamodb:List*",
-    "dynamodb:DescribeReservedCapacity*",
-    "dynamodb:DescribeLimits",
-    "dynamodb:DescribeTimeToLive"
+    actions = [
+      "dynamodb:List*",
+      "dynamodb:DescribeReservedCapacity*",
+      "dynamodb:DescribeLimits",
+      "dynamodb:DescribeTimeToLive"
     ]
 
     resources = ["*"]
@@ -25,10 +25,10 @@ data "aws_iam_policy_document" "lambda" {
       "dynamodb:CreateTable",
       "dynamodb:Delete*",
       "dynamodb:Update*",
-      "dynamodb:PutItem" 
+      "dynamodb:PutItem"
     ]
 
-    resources = [ "arn:aws:dynamodb:*:*:table/${aws_dynamodb_table.resume.id}"]
+    resources = ["arn:aws:dynamodb:*:*:table/${aws_dynamodb_table.resume.id}"]
   }
 }
 
@@ -46,8 +46,8 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_policy" "lambda" {
-  name        = "resume-lambda-policy"
-  policy      = data.aws_iam_policy_document.lambda.json
+  name   = "resume-lambda-policy"
+  policy = data.aws_iam_policy_document.lambda.json
 }
 
 resource "aws_iam_role_policy_attachment" "lambda" {
@@ -72,7 +72,7 @@ resource "aws_lambda_function" "lambda" {
   filename      = "lambda.zip"
   function_name = "resume_lambda_function"
   role          = aws_iam_role.lambda.arn
-  handler = "lambda.lambda_handler"
+  handler       = "lambda.lambda_handler"
 
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
