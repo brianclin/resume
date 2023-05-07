@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="has-background-grey-lighter">
@@ -30,11 +31,35 @@
                                 </div>
                             </div>
                         </nav>
+                        <div class="tabs is-centered is-medium">
+                            <ul>
+                                <li><a href="#experience">
+                                        <span class="material-icons pr-2">
+                                            work
+                                        </span>
+                                        <span>EXPERIENCE</span>
+                                    </a>
+                                </li>
+                                <li><a href="#skills">
+                                        <span class="material-icons pr-2">
+                                            handyman
+                                        </span>
+                                        <span>SKILLS</span>
+                                    </a>
+                                </li>
+                                <li><a href="#education">
+                                        <span class="material-icons pr-2">
+                                            school
+                                        </span>
+                                        <span>EDUCATION</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
-                <hr>
                 <section class="section">
-                    <h1 class="title">EXPERIENCE</h1>
+                    <h1 id="experience" class="title">EXPERIENCE</h1>
                     <article class="media">
                         <figure class="media-left">
                             <p class="image is-96x96">
@@ -52,7 +77,8 @@
                                 </p>
                                 <ul>
                                     <li>Setup ArgoCD in order to give developers a GUI to manage their deployments</li>
-                                    <li>Created a terraform module for cloudfront distributions for frontend applications</li>
+                                    <li>Created a terraform module for cloudfront distributions for frontend
+                                        applications</li>
                                 </ul>
                             </div>
                         </div>
@@ -73,8 +99,10 @@
                                     Oct 2021 - Oct 2022
                                 </p>
                                 <ul>
-                                    <li>Migrated all services from the AWS load balancer controller to the nginx ingress controller to standardize the ingress controller</li>
-                                    <li>Created Crossplane resources and a helm chart to setup pipelines to store data in Snowflake with Prefect</li>
+                                    <li>Migrated all services from the AWS load balancer controller to the nginx ingress
+                                        controller to standardize the ingress controller</li>
+                                    <li>Created Crossplane resources and a helm chart to setup pipelines to store data
+                                        in Snowflake with Prefect</li>
                                 </ul>
                             </div>
                         </div>
@@ -95,8 +123,10 @@
                                     Oct 2017 - Oct 2021
                                 </p>
                                 <ul>
-                                    <li>Created the deploy pipeline using Tekton that deployed to staging on merges to master, leading to multiple deploys to production a day</li>
-                                    <li>Setup a Jenkins instance using Jenkins Configuration as Code that was used as a GUI for deployments</li>
+                                    <li>Created the deploy pipeline using Tekton that deployed to staging on merges to
+                                        master, leading to multiple deploys to production a day</li>
+                                    <li>Setup a Jenkins instance using Jenkins Configuration as Code that was used as a
+                                        GUI for deployments</li>
                                     <li>Helped migrate infrastructure from using EC2 instances to using EKS</li>
                                 </ul>
                             </div>
@@ -141,7 +171,7 @@
                 </section>
                 <hr>
                 <section class="section">
-                    <h1 class="title">SKILLS</h1>
+                    <h1 id="skills" class="title">SKILLS</h1>
                     <ul>
                         <li>
                             <strong class="subtitle">Programming Langauges</strong>
@@ -358,7 +388,7 @@
                 </section>
                 <hr>
                 <section class="section">
-                    <h1 class="title">EDUCATION</h1>
+                    <h1 id="education" class="title">EDUCATION</h1>
                     <article class="media">
                         <figure class="media-left">
                             <p class="image is-96x96">
