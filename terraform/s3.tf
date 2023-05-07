@@ -62,6 +62,7 @@ resource "aws_s3_object" "companies" {
   bucket   = aws_s3_bucket.blin_resume.id
   key      = "/assets/companies/${each.value}"
   source   = "./assets/companies/${each.value}"
+  etag     = filemd5("./assets/companies/${each.value}")
 }
 
 resource "aws_s3_object" "skills" {
@@ -69,6 +70,7 @@ resource "aws_s3_object" "skills" {
   bucket   = aws_s3_bucket.blin_resume.id
   key      = "/assets/skills/${each.value}"
   source   = "./assets/skills/${each.value}"
+  etag     = filemd5("./assets/skills/${each.value}")
 }
 
 resource "aws_s3_object" "schools" {
@@ -76,4 +78,5 @@ resource "aws_s3_object" "schools" {
   bucket   = aws_s3_bucket.blin_resume.id
   key      = "/assets/schools/${each.value}"
   source   = "./assets/schools/${each.value}"
+  etag     = filemd5("./assets/schools/${each.value}")
 }
