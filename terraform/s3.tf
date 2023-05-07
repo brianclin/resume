@@ -54,9 +54,26 @@ resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.blin_resume.id
   key    = "index.html"
   source = "index.html"
+  etag   = filemd5("index.html")
+}
 
-  # The filemd5() function is available in Terraform 0.11.12 and later
-  # For Terraform 0.11.11 and earlier, use the md5() function and the file() function:
-  # etag = "${md5(file("path/to/file"))}"
-  etag = filemd5("index.html")
+resource "aws_s3_object" "companies" {
+  for_each = fileset("./assets/companies", "**")
+  bucket   = aws_s3_bucket.blin_resume.id
+  key      = "/assets/companies/${each.value}"
+  source   = "./assets/companies/${each.value}"
+}
+
+resource "aws_s3_object" "skills" {
+  for_each = fileset("./assets/skills", "**")
+  bucket   = aws_s3_bucket.blin_resume.id
+  key      = "/assets/companies/${each.value}"
+  source   = "./assets/skills/${each.value}"
+}
+
+resource "aws_s3_object" "schools" {
+  for_each = fileset("./assets/schools", "**")
+  bucket   = aws_s3_bucket.blin_resume.id
+  key      = "/assets/schools/${each.value}"
+  source   = "./assets/schools/${each.value}"
 }
