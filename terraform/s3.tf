@@ -67,7 +67,7 @@ resource "aws_s3_object" "companies" {
 resource "aws_s3_object" "skills" {
   for_each = fileset("./assets/skills", "**")
   bucket   = aws_s3_bucket.blin_resume.id
-  key      = "/assets/companies/${each.value}"
+  key      = "/assets/skills/${each.value}"
   source   = "./assets/skills/${each.value}"
 }
 
