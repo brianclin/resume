@@ -1,0 +1,39 @@
+on:
+  push:
+    branches: [ main ]
+
+env:
+  
+  AWS_REGION : "us-east-1"
+ 
+permissions:
+      id-token: write
+      contents: read
+jobs:
+  AssumeRoleAndCallIdentity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v2.0.0
+        with:
+          role-to-assume: arn:aws:iam::433766115278:role/ghActionsRole
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Sts GetCallerIdentity
+        run: |
+          aws sts get-caller-identity
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.1.7
+      - name: tf plan
+        run: |
+          cd terraform
+          terraform init
+          terraform validate
+          terraform plan
+      - name: tf apply
+        run: | 
+          tf apply -auto-approve
