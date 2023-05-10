@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href=" https://cdn.jsdelivr.net/npm/bulma-timeline@3.0.5/dist/css/bulma-timeline.min.css" rel="stylesheet">
 </head>
 
 <body class="has-background-grey-lighter">
@@ -128,13 +129,34 @@
                         </a>
                         <div class="media-content">
                             <div class="content">
-                                <p>
-                                    <strong>Senior Software Engineer</strong>
-                                    <br>
-                                    <small>Included Health</small>
-                                    <br>
-                                    Oct 2017 - Oct 2021
-                                </p>
+                                <div class="timeline no-headers">
+                                    <div class="timeline-item is-first">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <strong>Senior Software Engineer, Infrastructure</strong>
+                                            <br>
+                                            <small>Included Health</small>
+                                            <br>
+                                            Sep 2020 - Oct 2021
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <strong>Software Engineer II, Infrastructure</strong>
+                                            <br>
+                                            Oct 2018 - Sep 2020
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item is-last">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <strong>Software Development Engineer in Test</strong>
+                                            <br>
+                                            Oct 2017 - Oct 2018
+                                        </div>
+                                    </div>
+                                </div>
                                 <ul>
                                     <li>Designed and implemented a Continuous Delivery (CD) pipeline using Tekton,
                                         automating the deployment of code changes to staging upon merges to master, and
