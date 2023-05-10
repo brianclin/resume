@@ -36,4 +36,4 @@ jobs:
           terraform plan
       - name: tf apply
         run: | 
-          tf apply -auto-approve
+          terraform apply -auto-approve
