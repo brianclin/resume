@@ -40,4 +40,4 @@ jobs:
       - name: run cloudfront invalidation
         run: | 
           cd terraform
-          aws cloudfront create-invalidation --distribution-id $(terraform output -raw cloudfront_distribution_id) --paths "/*"
+          aws cloudfront create-invalidation --distribution-id "$(terraform output -raw cloudfront_distribution_id)" --paths "/*"
