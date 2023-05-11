@@ -82,8 +82,9 @@ resource "aws_s3_object" "schools" {
 }
 
 resource "aws_s3_object" "css" {
-  bucket = aws_s3_bucket.blin_resume.id
-  key    = "/assets/styles.css"
-  source = "./assets/styles.css"
-  etag   = filemd5("./assets/styles.css")
+  bucket       = aws_s3_bucket.blin_resume.id
+  key          = "/assets/styles.css"
+  source       = "./assets/styles.css"
+  etag         = filemd5("./assets/styles.css")
+  content_type = "text/css"
 }
