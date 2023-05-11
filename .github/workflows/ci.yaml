@@ -1,6 +1,8 @@
 on:
   push:
     branches: [ main ]
+    paths:
+    - 'terraform/**'
 
 env:
   
@@ -13,7 +15,7 @@ jobs:
   terraform-apply:
     runs-on: ubuntu-latest
     steps:
-      - name: Git clone the repository
+      - name: git clone the repository
         uses: actions/checkout@v3
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2.0.0
@@ -21,9 +23,6 @@ jobs:
           role-to-assume: arn:aws:iam::433766115278:role/ghActionsRole
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
-      - name: Sts GetCallerIdentity
-        run: |
-          aws sts get-caller-identity
       - name: setup terraform
         uses: hashicorp/setup-terraform@v2
         with:
@@ -38,3 +37,7 @@ jobs:
         run: | 
           cd terraform
           terraform apply -auto-approve
+      - name: run cloudfront invalidation
+        run: | 
+          cd terraform
+          aws cloudfront create-invalidation --distribution-id $(terraform output -raw cloudfront_distribution_id) --paths "/*"
