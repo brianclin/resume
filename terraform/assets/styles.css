@@ -10,3 +10,21 @@
 a.dropdown-item {
     justify-content: left;
 }
+
+.dropdown-menu.is-boxed {
+    border-radius: 6px;
+    border-top: none;
+    box-shadow: 0 8px 8px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 86ms;
+    transition-property: opacity, transform
+}
+
+.dropdown.is-hoverable:focus .dropdown-menu.is-boxed,
+.dropdown.is-hoverable:focus-within .dropdown-menu.is-boxed,
+.dropdown.is-hoverable:hover .dropdown-menu.is-boxed {
+    opacity: 1;
+    pointer-events: auto;
+}
