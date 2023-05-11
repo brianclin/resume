@@ -1,0 +1,12 @@
+.tabs.has-dropdown {
+    overflow-y: visible;
+    overflow-x: visible;
+}
+
+.has-text-orange {
+    color: #f96854
+}
+
+a.dropdown-item {
+    justify-content: left;
+}

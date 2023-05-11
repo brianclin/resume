@@ -80,3 +80,10 @@ resource "aws_s3_object" "schools" {
   source   = "./assets/schools/${each.value}"
   etag     = filemd5("./assets/schools/${each.value}")
 }
+
+resource "aws_s3_object" "css" {
+  bucket = aws_s3_bucket.blin_resume.id
+  key    = "/assets/styles.css"
+  source = "./assets/styles.css"
+  etag   = filemd5("./assets/styles.css")
+}

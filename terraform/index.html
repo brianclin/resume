@@ -4,8 +4,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link href=" https://cdn.jsdelivr.net/npm/bulma-timeline@3.0.5/dist/css/bulma-timeline.min.css" rel="stylesheet">
-    <link href=" https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css " rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma-timeline@3.0.5/dist/css/bulma-timeline.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css " rel="stylesheet">
+    <link href="./assets/styles.css" rel="stylesheet">
 </head>
 
 <body class="has-background-grey-lighter">
@@ -32,19 +33,44 @@
                                 </div>
                             </div>
                         </nav>
-                        <div class="tabs is-centered is-medium">
+                        <div class="tabs is-centered is-medium is-boxed has-dropdown">
                             <ul>
-                                <li><a href="#experience">
+                                <li>
+                                    <a href="#experience">
                                         <span class="mdi mdi-briefcase is-medium pr-1 has-text-primary"></span>
                                         <span>EXPERIENCE</span>
                                     </a>
                                 </li>
-                                <li><a href="#skills">
-                                        <span class="mdi mdi-hammer-screwdriver pr-1 has-text-primary"></span>
-                                        <span>SKILLS</span>
-                                    </a>
+                                <li class="dropdown is-hoverable">
+                                    <div class="dropdown-trigger">
+                                        <a href="#skills" aria-haspopup="true" aria-controls="dropdown-menu">
+                                            <span class="mdi mdi-hammer-screwdriver pr-1 has-text-primary"></span>
+                                            <span>SKILLS</span>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                        <div class="dropdown-content">
+                                            <a class="dropdown-item" href="#programming-languages">
+                                                <span class="mdi mdi-console pr-1 has-text-success"></span>
+                                                Programming Languages
+                                            </a>
+                                            <a class="dropdown-item" href="#infrastructure">
+                                                <span class="mdi mdi-cloud pr-1 has-text-warning"></span>
+                                                Infrastructure
+                                            </a>
+                                            <a class="dropdown-item" href="#cicd">
+                                                <span class="mdi mdi-ferry pr-1 has-text-danger"></span>
+                                                CI/CD
+                                            </a>
+                                            <a class="dropdown-item" href="#observability">
+                                                <span class="mdi mdi-eye pr-1 has-text-orange"></span>
+                                                Observability
+                                            </a>
+                                        </div>
+                                    </div>
                                 </li>
-                                <li><a href="#education">
+                                <li>
+                                    <a href="#education">
                                         <span class="mdi mdi-school pr-1 has-text-primary"></span>
                                         <span>EDUCATION</span>
                                     </a>
@@ -218,7 +244,7 @@
                         SKILLS
                     </h1>
                     <ul>
-                        <li>
+                        <li id="programming-languages">
                             <strong class="subtitle is-inline-block">
                                 <span class="mdi mdi-console has-text-success"></span>
                                 Programming Languages
@@ -265,7 +291,7 @@
                             </nav>
                         </li>
                         <br>
-                        <li>
+                        <li id="infrastructure">
                             <strong class="subtitle is-inline-block">
                                 <span class="mdi mdi-cloud has-text-warning"></span>
                                 Infrastructure
@@ -336,7 +362,7 @@
                             </nav>
                         </li>
                         <br>
-                        <li>
+                        <li id="cicd">
                             <strong class="subtitle is-inline-block">
                                 <span class="mdi mdi-ferry has-text-danger"></span>
                                 CI/CD
@@ -407,7 +433,7 @@
                             </nav>
                         </li>
                         <br>
-                        <li>
+                        <li id="observability">
                             <strong class="subtitle is-inline-block">
                                 <span class="mdi mdi-eye" style="color:#f96854;"></span>
                                 Observability
