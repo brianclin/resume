@@ -3,10 +3,13 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./assets/critical.css" rel="stylesheet">
     <title>Brian Lin</title>
     <meta name="description" content="Brian Lin's resume">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bulma-timeline@3.0.5/dist/css/bulma-timeline.min.css" rel="stylesheet">
+    <link href="./assets/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </head>
 
 <body class="has-background-grey-lighter">
@@ -45,19 +48,19 @@
                                 </a>
                                 <div class="navbar-dropdown">
                                     <a class="navbar-item" href="#programming-languages">
-                                        <iconify-icon class="has-text-success" inline icon="mdi:console"></iconify-icon>
+                                        <iconify-icon class="has-text-success pr-1" inline icon="mdi:console"></iconify-icon>
                                         Programming Languages
                                     </a>
                                     <a class="navbar-item" href="#infrastructure">
-                                        <iconify-icon class="has-text-warning" inline icon="mdi:cloud"></iconify-icon>
+                                        <iconify-icon class="has-text-warning pr-1" inline icon="mdi:cloud"></iconify-icon>
                                         Infrastructure
                                     </a>
                                     <a class="navbar-item" href="#cicd">
-                                        <iconify-icon class="has-text-danger" inline icon="mdi:ferry"></iconify-icon>
+                                        <iconify-icon class="has-text-danger pr-1" inline icon="mdi:ferry"></iconify-icon>
                                         CI/CD
                                     </a>
                                     <a class="navbar-item" href="#observability">
-                                        <iconify-icon class="has-text-orange" inline icon="mdi:eye"></iconify-icon>
+                                        <iconify-icon class="has-text-orange pr-1" inline icon="mdi:eye"></iconify-icon>
                                         Observability
                                     </a>
                                 </div>
@@ -530,17 +533,6 @@
             </div>
         </div>
     </div>
-    <script>var cb = function () {
-            var l = document.createElement('link'); l.rel = 'stylesheet';
-            l.href = './assets/combined.css';
-            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-            webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf) raf(cb);
-        else window.addEventListener('load', cb);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </body>
 
 </html>
