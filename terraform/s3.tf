@@ -88,3 +88,11 @@ resource "aws_s3_object" "css" {
   etag         = filemd5("./assets/styles.css")
   content_type = "text/css"
 }
+
+resource "aws_s3_object" "critical_css" {
+  bucket       = aws_s3_bucket.blin_resume.id
+  key          = "/assets/critical.css"
+  source       = "./assets/critical.css"
+  etag         = filemd5("./assets/critical.css")
+  content_type = "text/css"
+}
