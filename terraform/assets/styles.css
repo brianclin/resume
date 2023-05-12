@@ -1,30 +1,15 @@
-.tabs.has-dropdown {
-    overflow-y: visible;
-    overflow-x: visible;
-}
-
 .has-text-orange {
     color: #f96854
 }
 
-a.dropdown-item {
-    justify-content: left;
-}
-
-.dropdown-menu.is-boxed {
-    border-radius: 6px;
-    border-top: none;
-    box-shadow: 0 8px 8px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+.navbar.is-centered {
+    text-align: center;
     display: block;
-    opacity: 0;
-    pointer-events: none;
-    transition-duration: 86ms;
-    transition-property: opacity, transform
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
 }
 
-.dropdown.is-hoverable:focus .dropdown-menu.is-boxed,
-.dropdown.is-hoverable:focus-within .dropdown-menu.is-boxed,
-.dropdown.is-hoverable:hover .dropdown-menu.is-boxed {
-    opacity: 1;
-    pointer-events: auto;
+.navbar.is-centered>.navbar-item,
+.navbar.is-centered .navbar-link {
+    display: inline-block;
 }
