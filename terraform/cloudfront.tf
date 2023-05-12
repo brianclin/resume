@@ -15,6 +15,7 @@ module "cdn" {
 
   enabled                      = true
   default_root_object          = "index.html"
+  aliases                      = ["brianclin.dev"]
   create_origin_access_control = true
   origin_access_control = {
     s3_oac = {
@@ -69,4 +70,10 @@ module "cdn" {
       query_string    = true
     }
   ]
+
+  viewer_certificate = {
+    acm_certificate_arn      = aws_acm_certificate.cert.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
+  }
 }
