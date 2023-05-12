@@ -96,11 +96,3 @@ resource "aws_s3_object" "critical_css" {
   etag         = filemd5("./assets/critical.css")
   content_type = "text/css"
 }
-
-resource "aws_s3_object" "combined_css" {
-  bucket       = aws_s3_bucket.blin_resume.id
-  key          = "/assets/combined.css"
-  source       = "./assets/combined.css"
-  etag         = filemd5("./assets/combined.css")
-  content_type = "text/css"
-}
