@@ -67,8 +67,6 @@ data "archive_file" "lambda" {
 }
 
 resource "aws_lambda_function" "lambda" {
-  # If the file is not in the current working directory you will need to include a
-  # path.module in the filename.
   filename      = "lambda.zip"
   function_name = "resume_lambda_function"
   role          = aws_iam_role.lambda.arn
