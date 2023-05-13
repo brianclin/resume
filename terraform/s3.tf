@@ -66,11 +66,12 @@ resource "aws_s3_object" "companies" {
 }
 
 resource "aws_s3_object" "skills" {
-  for_each = fileset("./assets/skills", "**")
-  bucket   = aws_s3_bucket.blin_resume.id
-  key      = "/assets/skills/${each.value}"
-  source   = "./assets/skills/${each.value}"
-  etag     = filemd5("./assets/skills/${each.value}")
+  for_each     = fileset("./assets/skills", "**")
+  bucket       = aws_s3_bucket.blin_resume.id
+  key          = "/assets/skills/${each.value}"
+  source       = "./assets/skills/${each.value}"
+  etag         = filemd5("./assets/skills/${each.value}")
+  content_type = "image/svg+xml"
 }
 
 resource "aws_s3_object" "schools" {
