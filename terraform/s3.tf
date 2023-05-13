@@ -50,11 +50,12 @@ data "aws_iam_policy_document" "cloudfront" {
   }
 }
 
-resource "aws_s3_object" "object" {
-  bucket = aws_s3_bucket.blin_resume.id
-  key    = "index.html"
-  source = "index.html"
-  etag   = filemd5("index.html")
+resource "aws_s3_object" "html" {
+  bucket       = aws_s3_bucket.blin_resume.id
+  key          = "index.html"
+  source       = "index-critical.html"
+  etag         = filemd5("index-critical.html")
+  content_type = "text/html"
 }
 
 resource "aws_s3_object" "companies" {

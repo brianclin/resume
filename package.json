@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "critical": "^5.1.1",
+    "gulp": "^4.0.2"
+  },
+  "overrides": {
+    "critical": {
+      ".": "$critical",
+      "nwsapi": "2.2.2"
+    }
+  }
+}
