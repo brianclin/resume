@@ -89,3 +89,11 @@ resource "aws_s3_object" "css" {
   etag         = filemd5("./assets/styles.css")
   content_type = "text/css"
 }
+
+resource "aws_s3_object" "lazysizes" {
+  bucket       = aws_s3_bucket.blin_resume.id
+  key          = "/assets/lazysizes.min.js"
+  source       = "./assets/lazysizes.min.js"
+  etag         = filemd5("./assets/lazysizes.min.js")
+  content_type = "application/x-javascript"
+}
