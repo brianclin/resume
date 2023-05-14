@@ -13,3 +13,8 @@
 .navbar.is-centered .navbar-link {
     display: inline-block;
 }
+
+ul.has-text-left {
+    list-style-position: inside;
+    margin-left: 0;
+}
