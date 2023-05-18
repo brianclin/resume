@@ -98,3 +98,11 @@ resource "aws_s3_object" "lazysizes" {
   etag         = filemd5("./assets/lazysizes.min.js")
   content_type = "application/x-javascript"
 }
+
+resource "aws_s3_object" "favicon" {
+  bucket       = aws_s3_bucket.blin_resume.id
+  key          = "/assets/favicon.ico"
+  source       = "./assets/favicon.ico"
+  etag         = filemd5("./assets/favicon.ico")
+  content_type = "image/x-icon"
+}
