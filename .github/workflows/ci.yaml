@@ -1,16 +1,15 @@
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-    - 'terraform/**'
+      - "terraform/**"
 
 env:
-  
-  AWS_REGION : "us-east-1"
- 
+  AWS_REGION: "us-east-1"
+
 permissions:
-      id-token: write
-      contents: read
+  id-token: write
+  contents: read
 jobs:
   terraform-apply:
     runs-on: ubuntu-latest
@@ -34,11 +33,11 @@ jobs:
           terraform validate
           terraform plan
       - name: tf apply
-        run: | 
+        run: |
           cd terraform
           terraform apply -auto-approve
       - name: run cloudfront invalidation
-        run: | 
+        run: |
           cd terraform
           aws cloudfront create-invalidation --distribution-id "$(terraform-bin output -raw cloudfront_distribution_id)" --paths "/*"
           aws cloudfront create-invalidation --distribution-id "$(terraform-bin output -raw cloudfront_distribution_id)" --paths "/assets/*"
