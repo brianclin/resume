@@ -12,5 +12,5 @@ The website is deployed using terraform through Github Actions on merges to main
 
 ## Built With
 
-* [Bulma](https://bulma.io/) - CSS framework
-* [Terraform](https://www.terraform.io/) - IaC
+- [Bulma](https://bulma.io/) - CSS framework
+- [Terraform](https://www.terraform.io/) - IaC
