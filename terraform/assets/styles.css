@@ -1,20 +1,20 @@
 .has-text-orange {
-  color: #f96854;
+    color: #f96854
 }
 
 .navbar.is-centered {
-  text-align: center;
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid #dbdbdb;
+    text-align: center;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
 }
 
-.navbar.is-centered > .navbar-item,
+.navbar.is-centered>.navbar-item,
 .navbar.is-centered .navbar-link {
-  display: inline-block;
+    display: inline-block;
 }
 
 ul.has-text-left {
-  list-style-position: inside;
-  margin-left: 0;
+    list-style-position: inside;
+    margin-left: 0;
 }

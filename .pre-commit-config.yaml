@@ -12,16 +12,11 @@ repos:
     rev: 23.3.0
     hooks:
       - id: black
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.7.1
-    hooks:
-      - id: prettier
-        exclude: "index-critical.html"
   - repo: local
     hooks:
-      - id: run-critical
-        name: run critical
-        entry: gulp critical
-        language: system
-        files: "index.html"
-        pass_filenames: false
+    - id: run-critical
+      name: run critical
+      entry: gulp critical
+      language: system
+      files: 'index.html'
+      pass_filenames: false
