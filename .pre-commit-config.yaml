@@ -29,6 +29,6 @@ repos:
       - id: run-sass
         name: run sass
         entry: gulp sass
-        files: "styles.css"
+        files: "styles.scss"
         language: system
         pass_filenames: false

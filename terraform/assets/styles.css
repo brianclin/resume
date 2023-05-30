@@ -6531,6 +6531,10 @@ fieldset[disabled] [color-theme=dark] .pagination-ellipsis, fieldset[disabled] [
 [color-theme=dark] .has-text-black {
   color: #e5e5e5 !important;
 }
+[color-theme=dark] ul.has-text-left {
+  list-style-position: inside;
+  margin-left: 0;
+}
 
 .has-text-orange {
   color: #f96854;
