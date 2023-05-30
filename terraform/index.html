@@ -212,15 +212,20 @@
               </nav>
               <div class="navbar-item is-pulled-right">
                 <div class="field">
-                  <label class="is-inline-block"
+                  <label aria-labelledby="Light mode" class="is-inline-block"
                     ><iconify-icon
                       class="has-text-primary is-size-5 pr-1"
                       icon="mdi:white-balance-sunny"
                     ></iconify-icon
                   ></label>
-                  <input id="theme-switch" type="checkbox" name="theme-switch"
-                  class="switch is-rounded"">
-                  <label for="theme-switch">
+                  <input
+                    role="checkbox"
+                    id="theme-switch"
+                    type="checkbox"
+                    name="theme-switch"
+                    class="switch is-rounded"
+                  />
+                  <label aria-labelledby="Dark mode" for="theme-switch">
                     <iconify-icon
                       class="has-text-primary is-size-5"
                       inline
@@ -955,8 +960,10 @@
     if (theme == "dark") {
       document.documentElement.setAttribute("color-theme", "dark");
       toggleSwitch.checked = true;
+      toggleSwitch.setAttribute("aria-checked", true);
     } else {
       document.documentElement.setAttribute("color-theme", "light");
+      toggleSwitch.setAttribute("aria-checked", false);
     }
   }
   detectColorScheme();
@@ -967,10 +974,12 @@
       localStorage.setItem("saved-theme", "dark");
       document.documentElement.setAttribute("color-theme", "dark");
       toggleSwitch.checked = true;
+      toggleSwitch.setAttribute("aria-checked", true);
     } else {
       localStorage.setItem("saved-theme", "light");
       document.documentElement.setAttribute("color-theme", "light");
       toggleSwitch.checked = false;
+      toggleSwitch.setAttribute("aria-checked", false);
     }
   }
 
