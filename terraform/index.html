@@ -14,6 +14,10 @@
       href="https://cdn.jsdelivr.net/npm/bulma-timeline@3.0.5/dist/css/bulma-timeline.min.css"
       rel="stylesheet"
     />
+    <link
+      href=" https://cdn.jsdelivr.net/npm/bulma-switch@2.0.4/dist/css/bulma-switch.min.css "
+      rel="stylesheet"
+    />
     <link href="./assets/styles.css" rel="stylesheet" />
     <script
       defer
@@ -205,26 +209,25 @@
                   ></iconify-icon>
                   <span>EDUCATION</span>
                 </a>
-                <a
-                  class="navbar-item is-pulled-right is-size-5 is-dark"
-                  onclick="switchTheme();"
-                >
-                  <iconify-icon
-                    class="has-text-primary"
-                    inline
-                    icon="mdi:white-balance-sunny"
-                  ></iconify-icon>
-                </a>
-                <a
-                  class="navbar-item is-pulled-right is-size-5 is-light"
-                  onclick="switchTheme();"
-                >
-                  <iconify-icon
-                    class="has-text-primary"
-                    inline
-                    icon="mdi:weather-night"
-                  ></iconify-icon>
-                </a>
+                <div class="navbar-item is-pulled-right">
+                  <div class="field">
+                    <label class="is-inline-block"
+                      ><iconify-icon
+                        class="has-text-primary is-size-5 pr-1"
+                        icon="mdi:white-balance-sunny"
+                      ></iconify-icon
+                    ></label>
+                    <input id="theme-switch" type="checkbox" name="theme-switch"
+                    class="switch is-rounded"">
+                    <label for="theme-switch">
+                      <iconify-icon
+                        class="has-text-primary is-size-5"
+                        inline
+                        icon="mdi:weather-night"
+                      ></iconify-icon
+                    ></label>
+                  </div>
+                </div>
               </nav>
             </div>
           </section>
@@ -929,6 +932,8 @@
     console.log(data);
   })();
 
+  const toggleSwitch = document.querySelector("input#theme-switch");
+
   // determines if the user has a set theme
   function detectColorScheme() {
     var theme = "light"; //default to light
@@ -949,19 +954,26 @@
     // dark theme preferred, set document with a `color-theme` attribute
     if (theme == "dark") {
       document.documentElement.setAttribute("color-theme", "dark");
+      toggleSwitch.checked = true;
     } else {
       document.documentElement.setAttribute("color-theme", "light");
     }
   }
   detectColorScheme();
 
-  function switchTheme() {
-    if (document.documentElement.getAttribute("color-theme") == "dark") {
-      document.documentElement.setAttribute("color-theme", "light");
-      localStorage.setItem("saved-theme", "light");
-    } else {
-      document.documentElement.setAttribute("color-theme", "dark");
+  //function that changes the theme, and sets a localStorage variable to track the theme between page loads
+  function switchTheme(e) {
+    if (e.target.checked) {
       localStorage.setItem("saved-theme", "dark");
+      document.documentElement.setAttribute("color-theme", "dark");
+      toggleSwitch.checked = true;
+    } else {
+      localStorage.setItem("saved-theme", "light");
+      document.documentElement.setAttribute("color-theme", "light");
+      toggleSwitch.checked = false;
     }
   }
+
+  //listener for changing themes
+  toggleSwitch.addEventListener("change", switchTheme, false);
 </script>
