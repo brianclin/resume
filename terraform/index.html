@@ -21,7 +21,7 @@
     ></script>
   </head>
 
-  <body class="has-background-grey-lighter">
+  <body>
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column box">
@@ -32,12 +32,20 @@
               </div>
               <div class="block has-text-centered">
                 <a href="https://github.com/brianclin">
-                  <figure class="image is-48x48 is-inline-block">
+                  <figure class="image is-48x48 is-inline-block is-light">
                     <img
                       alt="Github logo"
                       width="48"
                       height="48"
                       src="./assets/svg/github.svg"
+                    />
+                  </figure>
+                  <figure class="image is-48x48 is-inline-block is-dark">
+                    <img
+                      alt="Github logo"
+                      width="48"
+                      height="48"
+                      src="./assets/svg/github-darkmode.svg"
                     />
                   </figure>
                 </a>
@@ -240,13 +248,23 @@
             </article>
             <article class="media">
               <a href="https://sendoso.com/">
-                <figure class="media-left">
+                <figure class="media-left is-light">
                   <p class="image is-96x96">
                     <img
                       alt="Sendoso logo"
                       width="96"
                       height="96"
                       src="./assets/svg/sendoso.svg"
+                    />
+                  </p>
+                </figure>
+                <figure class="media-left is-dark">
+                  <p class="image is-96x96">
+                    <img
+                      alt="Sendoso logo"
+                      width="96"
+                      height="96"
+                      src="./assets/svg/sendoso-darkmode.svg"
                     />
                   </p>
                 </figure>
@@ -289,13 +307,23 @@
             </article>
             <article class="media">
               <a href="https://includedhealth.com/">
-                <figure class="media-left">
+                <figure class="media-left is-light">
                   <p class="image is-96x96">
                     <img
                       alt="Included Health logo"
                       width="96"
                       height="96"
                       src="./assets/companies/includedhealth.png"
+                    />
+                  </p>
+                </figure>
+                <figure class="media-left is-dark">
+                  <p class="image is-96x96">
+                    <img
+                      alt="Included Health logo"
+                      width="96"
+                      height="96"
+                      src="./assets/svg/includedhealth-darkmode.svg"
                     />
                   </p>
                 </figure>
@@ -388,9 +416,17 @@
                 href="https://www.ibm.com/us-en/"
                 aria-label="Read more about IBM"
               >
-                <figure class="media-left">
+                <figure class="media-left is-light">
                   <iconify-icon
                     icon="logos:ibm"
+                    width="96"
+                    height="96"
+                  ></iconify-icon>
+                </figure>
+                <figure class="media-left is-dark">
+                  <iconify-icon
+                    icon="cib:ibm"
+                    style="color: #e5e5e5"
                     width="96"
                     height="96"
                   ></iconify-icon>
@@ -492,7 +528,14 @@
                           <p class="heading">AWS</p>
                         </strong>
                         <iconify-icon
+                          class="is-light"
                           icon="logos:aws"
+                          width="48"
+                          height="48"
+                        ></iconify-icon>
+                        <iconify-icon
+                          class="is-dark"
+                          icon="skill-icons:aws-dark"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -519,11 +562,21 @@
                         <strong>
                           <p class="heading">Helm</p>
                         </strong>
-                        <iconify-icon
-                          icon="logos:helm"
-                          width="48"
-                          height="48"
-                        ></iconify-icon>
+                        <figure class="image is-48x48 is-inline-block is-dark">
+                          <img
+                            alt="Helm logo"
+                            width="48"
+                            height="48"
+                            src="./assets/svg/helm-darkmode.svg"
+                          />
+                        </figure>
+                        <div class="is-light">
+                          <iconify-icon
+                            icon="logos:helm"
+                            width="48"
+                            height="48"
+                          ></iconify-icon>
+                        </div>
                       </div>
                     </a>
                   </div>
@@ -548,7 +601,15 @@
                           <p class="heading">Terraform</p>
                         </strong>
                         <iconify-icon
+                          class="is-light is-inline-block"
                           icon="logos:terraform-icon"
+                          width="48"
+                          height="48"
+                        ></iconify-icon>
+                        <iconify-icon
+                          class="is-dark is-inline-block"
+                          icon="devicon-plain:terraform"
+                          style="color: #e5e5e5; color-scheme: dark"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -588,13 +649,22 @@
                         <strong>
                           <p class="heading">Tekton</p>
                         </strong>
-                        <figure class="image is-48x48 is-inline-block">
+                        <figure class="image is-48x48 is-inline-block is-light">
                           <img
                             class="lazyload"
                             width="48"
                             height="48"
                             alt="Tekton logo"
                             data-src="./assets/svg/tekton.svg"
+                          />
+                        </figure>
+                        <figure class="image is-48x48 is-inline-block is-dark">
+                          <img
+                            class="lazyload"
+                            width="48"
+                            height="48"
+                            alt="Tekton logo"
+                            data-src="./assets/svg/tekton-darkmode.svg"
                           />
                         </figure>
                       </div>
@@ -635,7 +705,15 @@
                           <p class="heading">CircleCI</p>
                         </strong>
                         <iconify-icon
+                          class="is-light is-inline-block"
                           icon="logos:circleci"
+                          width="48"
+                          height="48"
+                        ></iconify-icon>
+                        <iconify-icon
+                          class="is-dark is-inline-block"
+                          icon="devicon-plain:circleci"
+                          style="color: #e5e5e5"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -676,10 +754,19 @@
                           <p class="heading">Datadog</p>
                         </strong>
                         <iconify-icon
+                          class="is-light is-inline-block"
                           icon="logos:datadog"
                           width="48"
                           height="48"
                         ></iconify-icon>
+                        <figure class="image is-48x48 is-inline-block is-dark">
+                          <img
+                            alt="Datadog logo"
+                            width="48"
+                            height="48"
+                            src="./assets/svg/datadog-darkmode.svg"
+                          />
+                        </figure>
                       </div>
                     </a>
                   </div>
@@ -690,10 +777,19 @@
                           <p class="heading">New Relic</p>
                         </strong>
                         <iconify-icon
+                          class="is-light is-inline-block"
                           icon="logos:new-relic-icon"
                           width="48"
                           height="48"
                         ></iconify-icon>
+                        <figure class="image is-48x48 is-inline-block is-dark">
+                          <img
+                            alt="New Relic logo"
+                            width="48"
+                            height="48"
+                            src="./assets/svg/newrelic-darkmode.svg"
+                          />
+                        </figure>
                       </div>
                     </a>
                   </div>
@@ -704,10 +800,19 @@
                           <p class="heading">Prometheus</p>
                         </strong>
                         <iconify-icon
+                          class="is-light is-inline-block"
                           icon="logos:prometheus"
                           width="48"
                           height="48"
                         ></iconify-icon>
+                        <figure class="image is-48x48 is-inline-block is-dark">
+                          <img
+                            alt="Prometheus logo"
+                            width="48"
+                            height="48"
+                            src="./assets/svg/prometheus-darkmode.svg"
+                          />
+                        </figure>
                       </div>
                     </a>
                   </div>
