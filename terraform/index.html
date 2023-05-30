@@ -31,8 +31,11 @@
                 <h1 class="title is-1">BRIAN LIN</h1>
               </div>
               <div class="block has-text-centered">
-                <a href="https://github.com/brianclin">
-                  <figure class="image is-48x48 is-inline-block is-light">
+                <a
+                  href="https://github.com/brianclin"
+                  class="is-inline-block is-light"
+                >
+                  <figure class="image is-48x48">
                     <img
                       alt="Github logo"
                       width="48"
@@ -40,7 +43,12 @@
                       src="./assets/svg/github.svg"
                     />
                   </figure>
-                  <figure class="image is-48x48 is-inline-block is-dark">
+                </a>
+                <a
+                  href="https://github.com/brianclin"
+                  class="is-inline-block is-dark"
+                >
+                  <figure class="image is-48x48">
                     <img
                       alt="Github logo"
                       width="48"
@@ -133,7 +141,7 @@
                 </div>
               </div>
               <nav
-                class="navbar is-centered is-hidden-touch"
+                class="navbar is-centered is-hidden-touch inline-block"
                 role="navigation"
                 aria-label="dropdown navigation"
               >
@@ -196,6 +204,26 @@
                     icon="mdi:school"
                   ></iconify-icon>
                   <span>EDUCATION</span>
+                </a>
+                <a
+                  class="navbar-item is-pulled-right is-size-5 is-dark"
+                  onclick="switchTheme();"
+                >
+                  <iconify-icon
+                    class="has-text-primary"
+                    inline
+                    icon="mdi:white-balance-sunny"
+                  ></iconify-icon>
+                </a>
+                <a
+                  class="navbar-item is-pulled-right is-size-5 is-light"
+                  onclick="switchTheme();"
+                >
+                  <iconify-icon
+                    class="has-text-primary"
+                    inline
+                    icon="mdi:weather-night"
+                  ></iconify-icon>
                 </a>
               </nav>
             </div>
@@ -835,7 +863,7 @@
                 <figure class="media-left">
                   <p class="image is-96x96">
                     <img
-                      alt="San Jose State Logo"
+                      alt="San Jose State logo"
                       width="96"
                       height="96"
                       class="lazyload"
@@ -900,4 +928,40 @@
     const data = await response.json();
     console.log(data);
   })();
+
+  // determines if the user has a set theme
+  function detectColorScheme() {
+    var theme = "light"; //default to light
+
+    // local storage is used to override OS theme settings
+    if (localStorage.getItem("saved-theme")) {
+      if (localStorage.getItem("saved-theme") == "dark") {
+        var theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      // matchMedia method not supported
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      //OS theme setting detected as dark
+      var theme = "dark";
+    }
+
+    // dark theme preferred, set document with a `color-theme` attribute
+    if (theme == "dark") {
+      document.documentElement.setAttribute("color-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("color-theme", "light");
+    }
+  }
+  detectColorScheme();
+
+  function switchTheme() {
+    if (document.documentElement.getAttribute("color-theme") == "dark") {
+      document.documentElement.setAttribute("color-theme", "light");
+      localStorage.setItem("saved-theme", "light");
+    } else {
+      document.documentElement.setAttribute("color-theme", "dark");
+      localStorage.setItem("saved-theme", "dark");
+    }
+  }
 </script>

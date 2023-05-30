@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@media (prefers-color-scheme: dark) {
+[color-theme="dark"] {
   // Set your brand colors
   $scheme-main: #42414d;
   $grey-darker: #e5e5e5;
@@ -13,44 +13,7 @@
   @import "../../node_modules/bulma/sass/elements/_all.sass";
   @import "../../node_modules/bulma/sass/components/_all.sass";
   @import "../../node_modules/bulma/sass/grid/_all.sass";
-}
 
-.has-text-orange {
-  color: #f96854;
-}
-
-.navbar.is-centered {
-  text-align: center;
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid #dbdbdb;
-}
-
-.navbar.is-centered > .navbar-item,
-.navbar.is-centered .navbar-link {
-  display: inline-block;
-}
-
-ul.has-text-left {
-  list-style-position: inside;
-  margin-left: 0;
-}
-
-@media (prefers-color-scheme: light) {
-  .is-dark {
-    display: none !important;
-  }
-
-  .is-light {
-    display: flex;
-  }
-
-  body {
-    background-color: #dbdbdb;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
   .is-light {
     display: none !important;
   }
@@ -91,5 +54,40 @@ ul.has-text-left {
 
   .has-text-black {
     color: #e5e5e5 !important;
+  }
+}
+
+.has-text-orange {
+  color: #f96854;
+}
+
+.navbar.is-centered {
+  text-align: center;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.navbar.is-centered > .navbar-item,
+.navbar.is-centered .navbar-link {
+  display: inline-block;
+}
+
+ul.has-text-left {
+  list-style-position: inside;
+  margin-left: 0;
+}
+
+[color-theme="light"] {
+  .is-dark {
+    display: none !important;
+  }
+
+  .is-light {
+    display: flex;
+  }
+
+  body {
+    background-color: #dbdbdb;
   }
 }
