@@ -239,7 +239,34 @@
               </div>
             </div>
           </section>
-          <hr class="is-hidden-desktop mt-0" />
+          <hr class="is-hidden-desktop mt-0 mb-0" />
+          <div class="is-pulled-right is-hidden-desktop">
+            <div class="field">
+              <label
+                aria-label="Light mode"
+                for="theme-switch-mobile"
+                class="is-inline-block"
+                ><iconify-icon
+                  class="has-text-primary is-size-5 pr-1"
+                  icon="mdi:white-balance-sunny"
+                ></iconify-icon
+              ></label>
+              <input
+                aria-label="Light/Dark mode toggle"
+                id="theme-switch-mobile"
+                type="checkbox"
+                name="theme-switch-mobile"
+                class="switch is-rounded"
+              />
+              <label aria-label="Dark mode" for="theme-switch-mobile">
+                <iconify-icon
+                  class="has-text-primary is-size-5"
+                  inline
+                  icon="mdi:weather-night"
+                ></iconify-icon
+              ></label>
+            </div>
+          </div>
           <section id="experience" class="section">
             <h1 class="title">
               <iconify-icon
@@ -941,6 +968,9 @@
   })();
 
   const toggleSwitch = document.querySelector("input#theme-switch");
+  const toggleSwitchMobile = document.querySelector(
+    "input#theme-switch-mobile"
+  );
 
   // determines if the user has a set theme
   function detectColorScheme() {
@@ -964,9 +994,12 @@
       document.documentElement.setAttribute("color-theme", "dark");
       toggleSwitch.checked = true;
       toggleSwitch.setAttribute("aria-checked", true);
+      toggleSwitchMobile.checked = true;
+      toggleSwitchMobile.setAttribute("aria-checked", true);
     } else {
       document.documentElement.setAttribute("color-theme", "light");
       toggleSwitch.setAttribute("aria-checked", false);
+      toggleSwitchMobile.setAttribute("aria-checked", false);
     }
   }
   detectColorScheme();
@@ -978,14 +1011,19 @@
       document.documentElement.setAttribute("color-theme", "dark");
       toggleSwitch.checked = true;
       toggleSwitch.setAttribute("aria-checked", true);
+      toggleSwitchMobile.checked = true;
+      toggleSwitchMobile.setAttribute("aria-checked", true);
     } else {
       localStorage.setItem("saved-theme", "light");
       document.documentElement.setAttribute("color-theme", "light");
       toggleSwitch.checked = false;
       toggleSwitch.setAttribute("aria-checked", false);
+      toggleSwitchMobile.checked = false;
+      toggleSwitchMobile.setAttribute("aria-checked", false);
     }
   }
 
   //listener for changing themes
   toggleSwitch.addEventListener("change", switchTheme, false);
+  toggleSwitchMobile.addEventListener("change", switchTheme, false);
 </script>
