@@ -51,58 +51,67 @@ data "aws_iam_policy_document" "cloudfront" {
 }
 
 resource "aws_s3_object" "html" {
-  bucket       = aws_s3_bucket.blin_resume.id
-  key          = "index.html"
-  source       = "index-critical.html"
-  etag         = filemd5("index-critical.html")
-  content_type = "text/html"
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "index.html"
+  source        = "index-critical.html"
+  etag          = filemd5("index-critical.html")
+  content_type  = "text/html"
+  cache_control = "public, max-age=31536000"
 }
 
 resource "aws_s3_object" "companies" {
-  for_each = fileset("./assets/companies", "**")
-  bucket   = aws_s3_bucket.blin_resume.id
-  key      = "/assets/companies/${each.value}"
-  source   = "./assets/companies/${each.value}"
-  etag     = filemd5("./assets/companies/${each.value}")
+  for_each      = fileset("./assets/companies", "**")
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "/assets/companies/${each.value}"
+  source        = "./assets/companies/${each.value}"
+  etag          = filemd5("./assets/companies/${each.value}")
+  content_type  = "image/png"
+  cache_control = "public, max-age=31536000"
 }
 
 resource "aws_s3_object" "svg" {
-  for_each     = fileset("./assets/svg", "**")
-  bucket       = aws_s3_bucket.blin_resume.id
-  key          = "/assets/svg/${each.value}"
-  source       = "./assets/svg/${each.value}"
-  etag         = filemd5("./assets/svg/${each.value}")
-  content_type = "image/svg+xml"
+  for_each      = fileset("./assets/svg", "**")
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "/assets/svg/${each.value}"
+  source        = "./assets/svg/${each.value}"
+  etag          = filemd5("./assets/svg/${each.value}")
+  cache_control = "public, max-age=31536000"
+  content_type  = "image/svg+xml"
 }
 
 resource "aws_s3_object" "schools" {
-  for_each = fileset("./assets/schools", "**")
-  bucket   = aws_s3_bucket.blin_resume.id
-  key      = "/assets/schools/${each.value}"
-  source   = "./assets/schools/${each.value}"
-  etag     = filemd5("./assets/schools/${each.value}")
+  for_each      = fileset("./assets/schools", "**")
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "/assets/schools/${each.value}"
+  source        = "./assets/schools/${each.value}"
+  etag          = filemd5("./assets/schools/${each.value}")
+  cache_control = "public, max-age=31536000"
+  content_type  = "image/png"
 }
 
 resource "aws_s3_object" "css" {
-  bucket       = aws_s3_bucket.blin_resume.id
-  key          = "/assets/styles.css"
-  source       = "./assets/styles.css"
-  etag         = filemd5("./assets/styles.css")
-  content_type = "text/css"
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "/assets/styles.css"
+  source        = "./assets/styles.css"
+  etag          = filemd5("./assets/styles.css")
+  cache_control = "public, max-age=31536000"
+  content_type  = "text/css"
 }
 
 resource "aws_s3_object" "lazysizes" {
-  bucket       = aws_s3_bucket.blin_resume.id
-  key          = "/assets/lazysizes.min.js"
-  source       = "./assets/lazysizes.min.js"
-  etag         = filemd5("./assets/lazysizes.min.js")
-  content_type = "application/x-javascript"
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "/assets/lazysizes.min.js"
+  source        = "./assets/lazysizes.min.js"
+  etag          = filemd5("./assets/lazysizes.min.js")
+  cache_control = "public, max-age=31536000"
+  content_type  = "application/x-javascript"
 }
 
 resource "aws_s3_object" "favicon" {
-  bucket       = aws_s3_bucket.blin_resume.id
-  key          = "/assets/favicon.ico"
-  source       = "./assets/favicon.ico"
-  etag         = filemd5("./assets/favicon.ico")
-  content_type = "image/x-icon"
+  bucket        = aws_s3_bucket.blin_resume.id
+  key           = "/assets/favicon.ico"
+  source        = "./assets/favicon.ico"
+  etag          = filemd5("./assets/favicon.ico")
+  content_type  = "image/x-icon"
+  cache_control = "public, max-age=31536000"
 }
