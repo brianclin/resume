@@ -59,16 +59,6 @@ resource "aws_s3_object" "html" {
   cache_control = "public, max-age=31536000"
 }
 
-resource "aws_s3_object" "companies" {
-  for_each      = fileset("./assets/companies", "**")
-  bucket        = aws_s3_bucket.blin_resume.id
-  key           = "/assets/companies/${each.value}"
-  source        = "./assets/companies/${each.value}"
-  etag          = filemd5("./assets/companies/${each.value}")
-  content_type  = "image/png"
-  cache_control = "public, max-age=31536000"
-}
-
 resource "aws_s3_object" "svg" {
   for_each      = fileset("./assets/svg", "**")
   bucket        = aws_s3_bucket.blin_resume.id
@@ -77,16 +67,6 @@ resource "aws_s3_object" "svg" {
   etag          = filemd5("./assets/svg/${each.value}")
   cache_control = "public, max-age=31536000"
   content_type  = "image/svg+xml"
-}
-
-resource "aws_s3_object" "schools" {
-  for_each      = fileset("./assets/schools", "**")
-  bucket        = aws_s3_bucket.blin_resume.id
-  key           = "/assets/schools/${each.value}"
-  source        = "./assets/schools/${each.value}"
-  etag          = filemd5("./assets/schools/${each.value}")
-  cache_control = "public, max-age=31536000"
-  content_type  = "image/png"
 }
 
 resource "aws_s3_object" "css" {
