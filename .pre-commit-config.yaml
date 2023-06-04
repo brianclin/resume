@@ -18,6 +18,9 @@ repos:
     hooks:
       - id: prettier
         exclude: "(index-critical.html|styles.css|.min.js$)"
+        additional_dependencies:
+          - prettier@2.1.2
+          - "@prettier/plugin-xml@0.12.0"
   - repo: local
     hooks:
       - id: run-critical
