@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 [color-theme="dark"] {
   // Set your brand colors
   $scheme-main: #42414d;
@@ -55,27 +54,27 @@
   .has-text-black {
     color: #e5e5e5 !important;
   }
-}
 
-.has-text-orange {
-  color: #f96854;
-}
+  .has-text-orange {
+    color: #f96854;
+  }
 
-.navbar.is-centered {
-  text-align: center;
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid #dbdbdb;
-}
+  .navbar.is-centered {
+    text-align: center;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
+  }
 
-.navbar.is-centered > .navbar-item,
-.navbar.is-centered .navbar-link {
-  display: inline-block;
-}
+  .navbar.is-centered > .navbar-item,
+  .navbar.is-centered .navbar-link {
+    display: inline-block;
+  }
 
-ul.has-text-left {
-  list-style-position: inside;
-  margin-left: 0;
+  ul.has-text-left {
+    list-style-position: inside;
+    margin-left: 0;
+  }
 }
 
 [color-theme="light"] {
@@ -89,5 +88,26 @@ ul.has-text-left {
 
   body {
     background-color: #dbdbdb;
+  }
+
+  .has-text-orange {
+    color: #f96854;
+  }
+
+  .navbar.is-centered {
+    text-align: center;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  .navbar.is-centered > .navbar-item,
+  .navbar.is-centered .navbar-link {
+    display: inline-block;
+  }
+
+  ul.has-text-left {
+    list-style-position: inside;
+    margin-left: 0;
   }
 }

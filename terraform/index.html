@@ -15,10 +15,15 @@
       rel="stylesheet"
     />
     <link
-      href=" https://cdn.jsdelivr.net/npm/bulma-switch@2.0.4/dist/css/bulma-switch.min.css "
+      href="https://cdn.jsdelivr.net/npm/bulma-switch@2.0.4/dist/css/bulma-switch.min.css "
       rel="stylesheet"
     />
     <link href="./assets/styles.css" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="script"
+      href="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"
+    />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"
@@ -393,7 +398,7 @@
                       alt="Included Health logo"
                       width="96"
                       height="96"
-                      src="./assets/companies/includedhealth.png"
+                      src="./assets/svg/includedhealth.svg"
                     />
                   </p>
                 </figure>
@@ -504,12 +509,14 @@
                   ></iconify-icon>
                 </figure>
                 <figure class="media-left is-dark">
-                  <iconify-icon
-                    icon="cib:ibm"
-                    style="color: #e5e5e5"
-                    width="96"
-                    height="96"
-                  ></iconify-icon>
+                  <p class="image is-96x96">
+                    <img
+                      alt="Included Health logo"
+                      width="96"
+                      height="96"
+                      src="./assets/svg/ibm-darkmode.svg"
+                    />
+                  </p>
                 </figure>
               </a>
               <div class="media-content">
@@ -609,7 +616,7 @@
                         </strong>
                         <iconify-icon
                           class="is-light"
-                          icon="logos:aws"
+                          icon="skill-icons:aws-light"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -682,7 +689,7 @@
                         </strong>
                         <iconify-icon
                           class="is-light is-inline-block"
-                          icon="logos:terraform-icon"
+                          icon="devicon:terraform"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -786,7 +793,7 @@
                         </strong>
                         <iconify-icon
                           class="is-light is-inline-block"
-                          icon="logos:circleci"
+                          icon="devicon-plain:circleci"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -833,12 +840,14 @@
                         <strong>
                           <p class="heading">Datadog</p>
                         </strong>
-                        <iconify-icon
-                          class="is-light is-inline-block"
-                          icon="logos:datadog"
-                          width="48"
-                          height="48"
-                        ></iconify-icon>
+                        <figure class="image is-48x48 is-inline-block is-light">
+                          <img
+                            alt="Datadog logo"
+                            width="48"
+                            height="48"
+                            src="./assets/svg/datadog.svg"
+                          />
+                        </figure>
                         <figure class="image is-48x48 is-inline-block is-dark">
                           <img
                             alt="Datadog logo"
