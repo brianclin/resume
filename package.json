@@ -11,7 +11,7 @@
   "overrides": {
     "critical": {
       ".": "$critical",
-      "nwsapi": "2.2.2"
+      "nwsapi": "2.2.7"
     }
   }
 }
