@@ -1,5 +1,5 @@
 module "resume" {
-  source = "git::https://github.com/brianclin/terraform-aws-s3-website.git?ref=v1.1.0"
+  source = "git::https://github.com/brianclin/terraform-aws-s3-website.git?ref=v1.1.1"
 
   domain_name            = "brianclin.dev"
   bucket_name            = "blin-resume"
