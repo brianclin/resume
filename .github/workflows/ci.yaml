@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: git clone the repository
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.1
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4.0.0
         with:
