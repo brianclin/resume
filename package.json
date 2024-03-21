@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "bulma": "^0.9.4",
+    "bulma": "^1.0.0",
     "critical": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
