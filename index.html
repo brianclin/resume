@@ -1046,17 +1046,6 @@
   </body>
 </html>
 <script>
-  (async () => {
-    // PUT request using fetch with async/await
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-    };
-    const response = await fetch("/count", requestOptions);
-    const data = await response.json();
-    console.log(data);
-  })();
-
   const toggleSwitch = document.querySelector("input#theme-switch");
   const toggleSwitchMobile = document.querySelector(
     "input#theme-switch-mobile"
