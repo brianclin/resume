@@ -17,7 +17,7 @@ gulp.task("critical", () => {
 
 gulp.task("sass", () => {
   return gulp
-    .src("./terraform/assets/**/*.scss")
+    .src("./assets/**/*.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./terraform/assets/"));
+    .pipe(gulp.dest("./assets/"));
 });

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bulma-timeline@3.0.5/dist/css/bulma-timeline.min.css"
@@ -82,7 +82,7 @@
               </div>
               <div class="is-hidden-desktop">
                 <div class="block has-text-centered">
-                  <a class="is-size-5 has-text-black" href="#experience">
+                  <a class="is-size-5" href="#experience">
                     <iconify-icon
                       class="has-text-primary"
                       inline
@@ -92,7 +92,7 @@
                   </a>
                 </div>
                 <div class="block has-text-centered">
-                  <a class="is-size-5 has-text-black" href="#skills">
+                  <a class="is-size-5" href="#skills">
                     <iconify-icon
                       class="has-text-primary"
                       inline
@@ -102,7 +102,7 @@
                   </a>
                 </div>
                 <div class="block has-text-centered">
-                  <a class="has-text-black" href="#programming-languages">
+                  <a href="#programming-languages">
                     <iconify-icon
                       class="has-text-success"
                       inline
@@ -112,7 +112,7 @@
                   </a>
                 </div>
                 <div class="block has-text-centered">
-                  <a class="has-text-black" href="#infrastructure">
+                  <a href="#infrastructure">
                     <iconify-icon
                       class="has-text-warning"
                       inline
@@ -122,7 +122,7 @@
                   </a>
                 </div>
                 <div class="block has-text-centered">
-                  <a class="has-text-black" href="#cicd">
+                  <a href="#cicd">
                     <iconify-icon
                       class="has-text-danger"
                       inline
@@ -132,7 +132,7 @@
                   </a>
                 </div>
                 <div class="block has-text-centered">
-                  <a class="has-text-black" href="#observability">
+                  <a href="#observability">
                     <iconify-icon
                       class="has-text-orange"
                       inline
@@ -142,7 +142,7 @@
                   </a>
                 </div>
                 <div class="block has-text-centered">
-                  <a class="is-size-5 has-text-black" href="#education">
+                  <a class="is-size-5" href="#education">
                     <iconify-icon
                       class="has-text-primary"
                       inline
@@ -751,7 +751,7 @@
                         <iconify-icon
                           class="is-dark is-inline-block"
                           icon="devicon-plain:terraform"
-                          style="color: #e5e5e5; color-scheme: dark"
+                          style="color: #e5e5e5"
                           width="48"
                           height="48"
                         ></iconify-icon>
@@ -1070,13 +1070,13 @@
 
     // dark theme preferred, set document with a `color-theme` attribute
     if (theme == "dark") {
-      document.documentElement.setAttribute("color-theme", "dark");
+      document.documentElement.setAttribute("data-theme", "dark");
       toggleSwitch.checked = true;
       toggleSwitch.setAttribute("aria-checked", true);
       toggleSwitchMobile.checked = true;
       toggleSwitchMobile.setAttribute("aria-checked", true);
     } else {
-      document.documentElement.setAttribute("color-theme", "light");
+      document.documentElement.setAttribute("data-theme", "light");
       toggleSwitch.setAttribute("aria-checked", false);
       toggleSwitchMobile.setAttribute("aria-checked", false);
     }
@@ -1087,14 +1087,14 @@
   function switchTheme(e) {
     if (e.target.checked) {
       localStorage.setItem("saved-theme", "dark");
-      document.documentElement.setAttribute("color-theme", "dark");
+      document.documentElement.setAttribute("data-theme", "dark");
       toggleSwitch.checked = true;
       toggleSwitch.setAttribute("aria-checked", true);
       toggleSwitchMobile.checked = true;
       toggleSwitchMobile.setAttribute("aria-checked", true);
     } else {
       localStorage.setItem("saved-theme", "light");
-      document.documentElement.setAttribute("color-theme", "light");
+      document.documentElement.setAttribute("data-theme", "light");
       toggleSwitch.checked = false;
       toggleSwitch.setAttribute("aria-checked", false);
       toggleSwitchMobile.checked = false;

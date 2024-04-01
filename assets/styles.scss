@@ -1,113 +1,47 @@
 @charset "utf-8";
-[color-theme="dark"] {
-  // Set your brand colors
-  $scheme-main: #42414d;
-  $grey-darker: #e5e5e5;
-  $grey-lighter: #e5e5e5;
-  $grey-dark: #e5e5e5;
 
-  // Import only what you need from Bulma
-  @import "../../node_modules/bulma/sass/utilities/_all.sass";
-  @import "../../node_modules/bulma/sass/base/_all.sass";
-  @import "../../node_modules/bulma/sass/elements/_all.sass";
-  @import "../../node_modules/bulma/sass/components/_all.sass";
-  @import "../../node_modules/bulma/sass/grid/_all.sass";
+body {
+  background: var(--bulma-background);
+}
 
+.has-text-orange {
+  color: #f96854;
+}
+
+.navbar.is-centered {
+  text-align: center;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid var(--bulma-text);
+}
+
+.navbar.is-centered > .navbar-item,
+.navbar.is-centered .navbar-link {
+  display: inline-block;
+}
+
+ul.has-text-left {
+  list-style-position: inside;
+  margin-left: 0;
+}
+
+[data-theme="dark"],
+.theme-dark {
   .is-light {
     display: none !important;
   }
 
-  body {
-    background-color: #2b2a33;
-  }
-
   .is-dark {
     display: flex;
-  }
-
-  .navbar-item:focus,
-  a.navbar-item:focus-within,
-  a.navbar-item:hover,
-  a.navbar-item.is-active,
-  .navbar-link:focus,
-  .navbar-link:focus-within,
-  .navbar-link:hover,
-  .navbar-link.is-active,
-  a.navbar-item:hover,
-  navbar-item.has-dropdown:focus .navbar-link,
-  .navbar-item.has-dropdown:hover .navbar-link,
-  .navbar-item.has-dropdown.is-active .navbar-link {
-    background-color: #2b2a33;
-    color: #e5e5e5;
-  }
-
-  .navbar-dropdown a.navbar-item:focus,
-  .navbar-dropdown a.navbar-item:hover {
-    background-color: #2b2a33;
-    color: #e5e5e5;
-  }
-
-  .box {
-    box-shadow: 0 0.5em 1em -0.125em #2b2a33, 0 0px 0 1px #2b2a33;
-  }
-
-  .has-text-black {
-    color: #e5e5e5 !important;
-  }
-
-  .has-text-orange {
-    color: #f96854;
-  }
-
-  .navbar.is-centered {
-    text-align: center;
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid #dbdbdb;
-  }
-
-  .navbar.is-centered > .navbar-item,
-  .navbar.is-centered .navbar-link {
-    display: inline-block;
-  }
-
-  ul.has-text-left {
-    list-style-position: inside;
-    margin-left: 0;
   }
 }
 
-[color-theme="light"] {
+[data-theme="light"] {
   .is-dark {
     display: none !important;
   }
 
   .is-light {
     display: flex;
-  }
-
-  body {
-    background-color: #dbdbdb;
-  }
-
-  .has-text-orange {
-    color: #f96854;
-  }
-
-  .navbar.is-centered {
-    text-align: center;
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid #dbdbdb;
-  }
-
-  .navbar.is-centered > .navbar-item,
-  .navbar.is-centered .navbar-link {
-    display: inline-block;
-  }
-
-  ul.has-text-left {
-    list-style-position: inside;
-    margin-left: 0;
   }
 }
