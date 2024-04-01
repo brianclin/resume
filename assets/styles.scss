@@ -1,21 +1,5 @@
 @charset "utf-8";
 
-// Import the components you need
-@forward "../node_modules/bulma/sass/components/";
-@forward "../node_modules/bulma/sass/components/card";
-@forward "../node_modules/bulma/sass/components/modal";
-@forward "../node_modules/bulma/sass/components/navbar";
-@forward "../node_modules/bulma/sass/elements/button";
-@forward "../node_modules/bulma/sass/elements/icon";
-@forward "../node_modules/bulma/sass/elements/content";
-@forward "../node_modules/bulma/sass/elements/notification";
-@forward "../node_modules/bulma/sass/elements/progress";
-@forward "../node_modules/bulma/sass/elements/tag";
-@forward "../node_modules/bulma/sass/layout/footer";
-
-// Import the themes so that all CSS variables have a value
-@forward "../node_modules/bulma/sass/themes";
-
 body {
   background: var(--bulma-background);
 }
