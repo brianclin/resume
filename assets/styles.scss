@@ -30,18 +30,10 @@ ul.has-text-left {
   .is-light {
     display: none !important;
   }
-
-  .is-dark {
-    display: flex;
-  }
 }
 
 [data-theme="light"] {
   .is-dark {
     display: none !important;
-  }
-
-  .is-light {
-    display: flex;
   }
 }

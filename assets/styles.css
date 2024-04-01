@@ -27,14 +27,7 @@ ul.has-text-left {
 .theme-dark .is-light {
   display: none !important;
 }
-[data-theme=dark] .is-dark,
-.theme-dark .is-dark {
-  display: flex;
-}
 
 [data-theme=light] .is-dark {
   display: none !important;
-}
-[data-theme=light] .is-light {
-  display: flex;
 }
