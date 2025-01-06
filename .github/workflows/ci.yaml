@@ -8,6 +8,7 @@ on:
       - "assets/**"
       - "package-lock.json"
       - "package.json"
+      - ".terraform.lock.hcl"
 
 env:
   AWS_REGION: "us-east-1"
