@@ -32,7 +32,7 @@ jobs:
       - name: setup terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.1.7
+          terraform_version: 1.13.4
       - name: tf plan
         run: |
           terraform init
