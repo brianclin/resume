@@ -2,7 +2,7 @@
   "type": "module",
   "devDependencies": {
     "bulma": "^1.0.0",
-    "critical": "^7.0.0",
+    "critical": "^8.0.0",
     "gulp": "^5.0.0",
     "gulp-sass": "^6.0.0",
     "gulp-sourcemaps": "^3.0.0",
